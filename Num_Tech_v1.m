@@ -4,7 +4,7 @@ constVec = ones(length(dep),1);
 indep = constVec;
 k=2;
 S=[1 1 1];
-advOpt.distrib='GED';
+advOpt.distrib='Normal';
 advOpt.std_method=1;
 
 % Calling fitting function
