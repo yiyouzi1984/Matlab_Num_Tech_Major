@@ -1,23 +1,18 @@
-% Simulation return series
+% plot simulation
 figure
 
-subplot(2,2,1);
-plot([Actual_Ret(:,1),Sim_Ret(:,1)]);
-legend('USD_ Actual','USD_ Sim')
-title('USD_ Ret')
+subplot(4,1,1)
+plot(Simul_Out.dep(:,1));
+title('USD_ RET')
 
+subplot(4,1,2)
+plot(Simul_Out.dep(:,2));
+title('JPY_ RET')
 
-subplot(2,2,2);
-plot([Actual_Ret(:,2),Sim_Ret(:,2)]);
-legend('JPY_ Actual','JPY_ Sim')
-title('JPY_ Ret')
+subplot(4,1,3)
+plot(Simul_Out.dep(:,3));
+title('EURO_ RET')
 
-subplot(2,2,3);
-plot([Actual_Ret(:,3),Sim_Ret(:,3)]);
-legend('EURO_ Actual','EURO_ Sim')
-title('EURO_ Ret')
-
-subplot(2,2,4);
-plot([Actual_Ret(:,4),Sim_Ret(:,4)]);
-legend('GBP_ Actual','GBP_ Sim')
-title('GBP_ Ret');
+subplot(4,1,4)
+plot(Simul_Out.dep(:,4));
+title('GBP_ RET')
