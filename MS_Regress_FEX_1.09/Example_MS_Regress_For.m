@@ -5,7 +5,7 @@ clear;
 addpath('m_Files'); % add 'm_Files' folder to the search path
 addpath('data_Files');
 
-logRet=importdata('Example_Fex.txt');  % load some Data.
+logRet=importdata('Example_FEX.txt');  % load some Data.
 
 idx=501;    % this is an index of where to forecast the new observation ( in this case the obs 500)
 

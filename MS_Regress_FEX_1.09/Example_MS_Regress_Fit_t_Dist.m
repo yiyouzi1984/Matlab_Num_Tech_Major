@@ -5,7 +5,7 @@ clear;
 addpath('m_Files'); % add 'm_Files' folder to the search path
 addpath('data_Files');
 
-logRet=importdata('Example_Fex.txt');  % load some Data.
+logRet=importdata('Example_Fex.txt');  % load some Data. 
 
 dep=logRet(:,1);                    % Defining dependent variable from .mat file
 constVec=ones(length(dep),1);       % Defining a constant vector in mean equation (just an example of how to do it)

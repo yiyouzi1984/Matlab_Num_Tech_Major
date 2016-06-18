@@ -7,19 +7,18 @@ addpath('data_Files');
 
 logRet=importdata('Example_FEX.txt');  % load some Data.
 
-dep=logRet(:,1:2);                  % Defining dependent variable from .mat file
+dep=logRet(:,1:3);                  % Defining dependent variable from .mat file
 constVec=ones(length(dep),1);       % Defining a constant vector in mean equation (just an example of how to do it)
 indep{1}=constVec;                  % Defining some explanatory variables
 indep{2}=constVec;                  % Defining some explanatory variables
+indep{3}=lagmatrix(logRet(1),1);
 k=2;                                % Number of States
-S{1}=[1 1];                        % Defining which parts of the equation will switch states (column 1 and variance only)
-S{2}=[1 1];                        % Defining which parts of the equation will switch states (column 1 and variance only)
+S{1}=[1 1 1];                        % Defining which parts of the equation will switch states (column 1 and variance only)
+% S{2}=[1 1];                        % Defining which parts of the equation will switch states (column 1 and variance only)
 
 advOpt.distrib='Normal';            % The Distribution assumption ('Normal', 't' or 'GED')
 advOpt.std_method=1;                % Defining the method for calculation of standard errors. See pdf file for more details
 advOpt.diagCovMat=0;
-advOpt.optimizer = 'fmincon';
-
 
 [Spec_Out]=MS_Regress_Fit(dep,indep,k,S,advOpt); % Estimating the model
 
